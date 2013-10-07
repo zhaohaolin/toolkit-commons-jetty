@@ -18,16 +18,17 @@ import org.eclipse.jetty.webapp.WebAppContext;
  */
 public class EmbbedJetty {
 	
-	private final static Logger	logger		= Logger.getAnonymousLogger();
-	private String				hostname	= "localhost";
-	private int					port		= 8089;
-	private String				webAppDir	= "webapp";
-	private String				contextPath	= "/";
-	private int					threadNum	= 256;
-	private String				URIEncoding	= "UTF-8";
-	private Server				server		= null;
-	private String				baseDir		= ".";
-	private String				appBase		= ".";
+	private final static Logger	logger			= Logger.getAnonymousLogger();
+	private final static String	DEFAULT_NAME	= "Embbed-Jetty-Http";
+	private String				hostname		= "localhost";
+	private int					port			= 8089;
+	private String				webAppDir		= "webapp";
+	private String				contextPath		= "/";
+	private int					threadNum		= 256;
+	private String				URIEncoding		= "UTF-8";
+	private Server				server			= null;
+	private String				baseDir			= ".";
+	private String				appBase			= ".";
 	
 	public String getHostname() {
 		return hostname;
@@ -95,7 +96,7 @@ public class EmbbedJetty {
 		connector.setRequestHeaderSize(8192);
 		
 		QueuedThreadPool threadPool = new QueuedThreadPool(threadNum);
-		threadPool.setName("embbed-jetty-http");
+		threadPool.setName(DEFAULT_NAME);
 		connector.setThreadPool(threadPool);
 		
 		server.setConnectors(new Connector[] { connector });

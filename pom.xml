@@ -96,7 +96,7 @@
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-webapp</artifactId>
-			<version>8.0.0.RC0</version>
+			<version>8.0.0.M2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
